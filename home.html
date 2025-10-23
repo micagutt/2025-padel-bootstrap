@@ -2,21 +2,117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pádel bootstrap home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pádel bootstrap home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link href="/assets/css/styles.css" rel="stylesheet">
 </head>
 
-<body>
-    <section class="text-center py-5 bg-light">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Reservá tu cancha de pádel en segundos 🎾</h1>
-            <p class="lead mt-3">Elegí el horario, invitá a tus amigos y armá partidos aleatorios fácilmente.</p>
-            <a href="formulario-reserva.html" class="btn btn-primary btn-lg mt-4">Reservar ahora</a>
+<body class="bg-light">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">PadelBook</a>
+      <a class="nav-link text-white" href="mis-reservas.html">Mis reservas</a>
+    </div>
+  </nav>
+
+  <!-- SECCIÓN CANCHAS -->
+  <section class="container py-5">
+    <h1 class="text-center mb-2 fw-semibold">Canchas disponibles</h1>
+    <h4 class="text-center mb-5">¡No te quedes sin lugar!</h4>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Cancha Techada -->
+      <article class="col-md-4">
+        <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
+          data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Techada" role="button" tabindex="0">
+          <img src="assets/img/cancha-techada.png" class="card-img" alt="Cancha Techada">
+          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
+            <h5 class="bg-dark bg-opacity-90 rounded-2 px-4 py-2 d-inline-block fw-bold text-white">Cancha techada</h5>
+          </div>
         </div>
-    </section>
+      </article>
+
+      <!-- Cancha Norte -->
+      <article class="col-md-4">
+        <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
+          data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Norte" role="button" tabindex="0">
+          <img src="assets/img/cancha-norte.png" class="card-img" alt="Cancha Norte">
+          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
+            <h5 class="mb-0 fw-bold text-white">Cancha Norte</h5>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cancha Sur -->
+      <article class="col-md-4">
+        <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
+          data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Sur" role="button" tabindex="0">
+          <img src="assets/img/cancha-sur.png" class="card-img" alt="Cancha Sur">
+          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
+            <h5 class="mb-0 fw-bold text-white">Cancha Sur</h5>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MODAL HORARIOS -->
+  <section>
+    <article class="modal fade" id="modalTechada" tabindex="-1" aria-labelledby="modalTechadaLabel" aria-hidden="true">
+      <section class="modal-dialog modal-dialog-centered">
+        <article class="modal-content shadow rounded-4 overflow-hidden">
+
+          <header class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="modalTechadaLabel">Cancha Techada - Seleccioná un horario</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </header>
+
+          <section class="modal-body">
+            <form method="get" action="formulario-reserva.html">
+              <input type="hidden" name="cancha" value="Cancha Techada">
+              <div class="list-group">
+                <label class="list-group-item list-group-item-action">
+                  <input class="form-check-input me-2" type="radio" name="hora" value="09:00" required>09:00
+                </label>
+                <label class="list-group-item list-group-item-action">
+                  <input class="form-check-input me-2" type="radio" name="hora" value="11:00" required>11:00
+                </label>
+                <label class="list-group-item list-group-item-action">
+                  <input class="form-check-input me-2" type="radio" name="hora" value="13:00" required>13:00
+                </label>
+                <label class="list-group-item list-group-item-action">
+                  <input class="form-check-input me-2" type="radio" name="hora" value="15:00" required>15:00
+                </label>
+                <label class="list-group-item list-group-item-action">
+                  <input class="form-check-input me-2" type="radio" name="hora" value="17:00" required>17:00
+                </label>
+                <label class="list-group-item list-group-item-action">
+                  <input class="form-check-input me-2" type="radio" name="hora" value="19:00" required>19:00
+                </label>
+                <label class="list-group-item list-group-item-action">
+                  <input class="form-check-input me-2" type="radio" name="hora" value="21:00" required>21:00
+                </label>
+              </div>
+
+              <footer class="modal-footer p-3">
+                <button type="submit" class="btn btn-success w-100">Seguir completando formulario</button>
+              </footer>
+            </form>
+          </section>
+        </article>
+      </section>
+    </article>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 
