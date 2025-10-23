@@ -1,4 +1,3 @@
-/* controla la posición inicial y el hover (archivo externo, buena práctica) */
 .cancha-card { cursor: pointer; overflow: hidden; }
 .cancha-card .overlay {
   align-items: flex-end;          /* inicia abajo */

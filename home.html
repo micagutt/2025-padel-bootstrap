@@ -10,7 +10,7 @@
   <link href="/assets/css/styles.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body class="bg-dark">
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
@@ -20,10 +20,35 @@
     </div>
   </nav>
 
+ <!-- INVITACIÓN A JUGAR -->
+  <section id="hero" class="container-fluid position-relative overflow-hidden bg-dark text-light py-5">
+
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <span class="badge bg-white text-dark rounded-pill mb-3">¡Vení a jugar!</span>
+          <h1 class="display-5 fw-bold lh-sm">Encontrá tu cancha y reservá en segundos</h1>
+          <p class="lead mb-4">Horarios flexibles, canchas de primer nivel y la mejor experiencia para juntarte a jugar pádel.</p>
+
+          <div class="d-grid gap-2 d-sm-flex">
+            <a href="#canchas" class="btn btn-light btn-lg me-sm-2">Reservar ahora</a>
+            <a href="mis-reservas.html" class="btn btn-outline-light btn-lg">Mis reservas</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+            <img src="assets/img/personas-jugando.jpeg" class="w-100 h-100 object-fit-cover" alt="Decorativo" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECCIÓN CANCHAS -->
-  <section class="container py-5">
-    <h1 class="text-center mb-2 fw-semibold">Canchas disponibles</h1>
-    <h4 class="text-center mb-5">¡No te quedes sin lugar!</h4>
+  <section id="canchas" class="container py-5">
+    <h1 class="text-center text-light mb-2 fw-bold lh-sm">Canchas disponibles</h1>
+    <h4 class="text-center text-light mb-5 lead">¡No te quedes sin tu lugar!</h4>
 
     <div class="row g-4 justify-content-center">
 
@@ -33,7 +58,7 @@
           data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Techada" role="button" tabindex="0">
           <img src="assets/img/cancha-techada.png" class="card-img" alt="Cancha Techada">
           <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
-            <h5 class="bg-dark bg-opacity-90 rounded-2 px-4 py-2 d-inline-block fw-bold text-white">Cancha techada</h5>
+            <h5 class="mb-0 fw-bold text-white">Cancha techada</h5>
           </div>
         </div>
       </article>
@@ -101,15 +126,28 @@
                 </label>
               </div>
 
-              <footer class="modal-footer p-3">
-                <button type="submit" class="btn btn-success w-100">Seguir completando formulario</button>
-              </footer>
+              <div class="modal-footer p-3">
+                <button type="submit" class="btn btn-success w-100">Seguir completando el formulario</button>
+              </div>
             </form>
           </section>
         </article>
       </section>
     </article>
   </section>
+
+      <!-- PELOTAS DE FONDO
+    <svg class="position-absolute top-0 start-0 translate-middle text-primary opacity-25" width="520" height="520" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img" pointer-events="none">
+      <circle cx="260" cy="260" r="260" fill="currentColor"/>
+    </svg>
+
+    <svg class="position-absolute top-0 end-0 translate-middle text-success opacity-25" width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img" pointer-events="none">
+      <circle cx="210" cy="210" r="210" fill="currentColor"/>
+    </svg>
+
+    <svg class="position-absolute bottom-0 end-0 translate-middle text-secondary opacity-25" width="360" height="360" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img" pointer-events="none">
+      <circle cx="180" cy="180" r="180" fill="currentColor"/>
+    </svg> -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
