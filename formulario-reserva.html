@@ -1,33 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario pádel</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Reservar cancha | Pádel Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-    <form>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">PadelBook</a>
+            <a class="nav-link text-white" href="mis-reservas.html">Mis reservas</a>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </nav>
 
+    <!-- FORMULARIO -->
+    <section class="py-5">
+        <div class="container">
+            <a href="home.html" class="btn btn-outline-primary btn-sm mb-3 d-inline-flex align-items-center"
+                aria-label="Volver al inicio">
+                <i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Volver al inicio
+            </a>
+            <h2 class="text-center fw-bold mb-4">Reservá tu cancha 🎾</h2>
+
+            <form id="reservaForm" class="p-4 bg-light border border-primary rounded-4 shadow-sm">
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label fw-bold">Nombre del jugador o grupo</label>
+                    <input type="text" class="form-control" id="nombre" required placeholder="Ej: Los Smashers">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="fecha" class="form-label fw-bold">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="hora" class="form-label fw-bold">Horario</label>
+                        <input type="time" class="form-control" id="hora" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="jugadores" class="form-label fw-bold">Cantidad de jugadores</label>
+                    <input type="number" class="form-control" id="jugadores" min="2" max="8" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cancha" class="form-label fw-bold">Cancha</label>
+                    <select class="form-select" id="cancha" required>
+                        <option value="">Seleccioná una cancha</option>
+                        <option value="Cancha 1">Cancha techada</option>
+                        <option value="Cancha 2">Cancha norte</option>
+                        <option value="Cancha 3">Cancha sur</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="comentarios" class="form-label fw-bold">Comentario o nivel (opcional)</label>
+                    <textarea class="form-control" id="comentarios" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100 fw-bold">Guardar reserva</button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-light pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row justify-content-center text-center align-items-start g-4">
+
+                <!-- Columna 1: Logo o nombre -->
+                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                    <h4 class="fw-bold text-uppercase mb-0">Pádel Booking</h4>
+                </div>
+
+                <!-- Columna 2: Navegación interna -->
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-bold mb-3">Enlaces útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="home.html" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="formulario-reserva.html" class="text-light text-decoration-none">Reservar
+                                cancha</a></li>
+                        <li><a href="mis-reservas.html" class="text-light text-decoration-none">Mis reservas</a></li>
+                        <li><a href="#sobre-nosotros" class="text-light text-decoration-none">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Redes sociales -->
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-bold mb-3">Seguinos</h5>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://www.instagram.com/" class="text-light text-decoration-none fs-6"
+                            aria-label="Instagram">Instagram</a>
+                        <a href="https://www.facebook.com/" class="text-light text-decoration-none fs-6"
+                            aria-label="Facebook">Facebook</a>
+                        <a href="https://x.com/" class="text-light text-decoration-none fs-6"
+                            aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <!-- Copyright -->
+            <div class="text-center text-muted small">
+                © 2025 Pádel Booking — Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/reserva.js"></script>
 </body>
 
 </html>
