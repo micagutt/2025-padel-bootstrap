@@ -11,35 +11,35 @@
 
 <body class="bg-dark min-vh-100 d-flex flex-column">
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">PadelBook</a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">PadelBook</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="formulario-reserva.html">Reservar cancha</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="mis-reservas.html">Mis reservas</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="formulario-reserva.html">Reservar cancha</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="mis-reservas.html">Mis reservas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <main class="container py-5 flex-grow-1">
 
         <div class="row mb-2">
             <div class="col-12">
-                <button type="button" class="btn btn-link btn-sm text-white text-decoration-none p-0" onclick="history.back()"
-                    aria-label="Volver">
+                <button type="button" class="btn btn-link btn-sm text-white text-decoration-none p-0"
+                    onclick="history.back()" aria-label="Volver">
                     ← Volver
                 </button>
             </div>
@@ -50,7 +50,8 @@
                 <h1 class="text-light fw-bold mb-0">Mis Reservas</h1>
             </div>
             <div class="col-auto">
-                <a href="home.html#canchas" class="btn btn-success d-inline-flex align-items-center justify-content-center px-3 py-2"
+                <a href="formulario-reserva.html"
+                    class="btn btn-success d-inline-flex align-items-center justify-content-center px-3 py-2"
                     role="button">
                     <i class="bi bi-plus-circle me-2" aria-hidden="true"></i>
                     Hacer una nueva reserva
@@ -60,8 +61,7 @@
 
         <div class="alert alert-info d-none" id="alerta-vacio" role="alert">
             <h4 class="alert-heading">¡Todavía no tenés reservas!</h4>
-            <p>Parece que no tenés ninguna cancha reservada. ¡Andá a la <a href="home.html#canchas"
-                    class="alert-link">sección de canchas</a> para reservar la tuya!</p>
+            <p>Parece que no tenés ninguna cancha reservada. ¡Andá a la <a href="home.html#canchas" class="alert-link">sección de canchas</a> para reservar la tuya!</p>
         </div>
 
         <div class="row" id="contenedor-reservas">

@@ -8,10 +8,23 @@
   align-items: center;            /* sube el título al centro */
   background: rgba(0,0,0,0.62);   /* se oscurece */
 }
-.cancha-card .overlay h5 { margin:0; color:#fff; transform: translateY(8px); transition: transform .25s ease; }
-.cancha-card:hover .overlay h5 { transform: translateY(0); }
-.cancha-card .card-img { transition: transform .25s ease; display:block; width:100%; }
-.cancha-card:hover .card-img { transform: scale(1.03); }
+.cancha-card .overlay h5 { 
+  margin:0; 
+  color:#fff; 
+  transform: translateY(8px); 
+  transition: transform .25s ease; 
+}
+.cancha-card:hover .overlay h5 { 
+  transform: translateY(0); 
+}
+.cancha-card .card-img { 
+  transition: transform .25s ease; 
+  display:block; 
+  width:100%; 
+}
+.cancha-card:hover .card-img { 
+  transform: scale(1.03); 
+}
 
 #sobre-nosotros .card-img-overlay {
   background-image: linear-gradient(
