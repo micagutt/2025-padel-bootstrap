@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // MODAL HOME.HTML
-
     const modalHorarios = document.getElementById('modalTechada');
     if (modalHorarios) {
 
@@ -61,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // FORMULARIO-RESERVA.HTML
-
     const formReserva = document.getElementById("reservaForm");
     if (formReserva) {
 
@@ -122,8 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-
-
 
 // FUNCION PARA MOSTRAR LA RESERVA EN MIS-RESERVAS.HTML
 function cargarReservas() {
@@ -188,9 +184,6 @@ function asignarEventosCancelar() {
     });
 }
 
-/** borra una reserva del localStorage y recarga la vista
- @param {number} id 
- el ID de la reserva a cancelar **/
 
 function cancelarReserva(id) {
     if (!confirm("¿Estás seguro de que querés cancelar esta reserva?")) {
@@ -207,12 +200,6 @@ function cancelarReserva(id) {
 }
 
 
-/**
- * muestro alertas de Bootstrap
- * @param {string} mensaje - el texto a mostrar
- * @param {string} tipo - 'success', 'danger', 'warning', 'info', etc.
- * @param {HTMLElement} contenedor - dónde insertar la alerta
- */
 function mostrarAlerta(mensaje, tipo, contenedor) {
     // Limpio alertas previas
     const alertaPrevia = contenedor.querySelector('.alert');
