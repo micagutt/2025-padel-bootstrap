@@ -16,7 +16,22 @@
   <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">PadelBook</a>
-      <a class="nav-link text-white" href="mis-reservas.html">Mis reservas</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="formulario-reserva.html">Reservar cancha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="mis-reservas.html">Mis reservas</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -26,10 +41,14 @@
     <div class="container py-5">
       <div class="row align-items-center">
         <div class="col-lg-7">
-          <span class="badge bg-white text-dark rounded-pill mb-3">¡Vení a jugar!</span>
-          <h1 class="display-5 fw-bold lh-sm">Encontrá tu cancha y reservá en segundos</h1>
-          <p class="lead mb-4">Horarios flexibles, canchas de primer nivel y la mejor experiencia para juntarte a jugar
-            pádel.</p>
+
+          <h1 class="display-4 fw-bold lh-sm mb-3">Encontrá tu cancha y reservá en segundos</h1>
+
+          <div class="row">
+            <div class="col-12 col-md-10 col-lg-8">
+              <p class="lead mb-4 text-white-50">La mejor experiencia para juntarte a jugar pádel: reservá rápido y fácil, elegí horario y cancha.</p>
+            </div>
+          </div>
 
           <div class="d-grid gap-2 d-sm-flex">
             <a href="#canchas" class="btn btn-light btn-lg me-sm-2">Reservar ahora</a>
@@ -60,7 +79,7 @@
           data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Techada" role="button" tabindex="0">
           <img src="assets/img/cancha-techada.png" class="card-img" alt="Cancha Techada">
           <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
-            <h5 class="mb-0 fw-bold text-white">Cancha techada</h5>
+            <h5 class="mb-0 fw-bold text-white">Cancha Techada</h5>
           </div>
         </div>
       </article>
@@ -92,62 +111,79 @@
 
   <!-- MODAL HORARIOS -->
   <section>
-    <article class="modal fade" id="modalTechada" tabindex="-1" aria-labelledby="modalTechadaLabel" aria-hidden="true">
-      <section class="modal-dialog modal-dialog-centered">
-        <article class="modal-content shadow rounded-4 overflow-hidden">
+  <article class="modal fade" id="modalTechada" tabindex="-1" aria-labelledby="modalTechadaLabel" aria-hidden="true">
+    <section class="modal-dialog modal-dialog-centered">
+      <article class="modal-content shadow rounded-4 overflow-hidden">
 
-          <header class="modal-header bg-primary text-white">
-            <h5 class="modal-title" id="modalTechadaLabel">Cancha Techada - Seleccioná un horario</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-              aria-label="Cerrar"></button>
-          </header>
+        <header class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="modalTechadaLabel">Seleccioná un horario</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </header>
 
-          <section class="modal-body">
-            <form method="get" action="formulario-reserva.html">
-              <input type="hidden" name="cancha" value="Cancha Techada">
-              <div class="list-group">
-                <label class="list-group-item list-group-item-action">
-                  <input class="form-check-input me-2" type="radio" name="hora" value="09:00" required>09:00
-                </label>
-                <label class="list-group-item list-group-item-action">
-                  <input class="form-check-input me-2" type="radio" name="hora" value="11:00" required>11:00
-                </label>
-                <label class="list-group-item list-group-item-action">
-                  <input class="form-check-input me-2" type="radio" name="hora" value="13:00" required>13:00
-                </label>
-                <label class="list-group-item list-group-item-action">
-                  <input class="form-check-input me-2" type="radio" name="hora" value="15:00" required>15:00
-                </label>
-                <label class="list-group-item list-group-item-action">
-                  <input class="form-check-input me-2" type="radio" name="hora" value="17:00" required>17:00
-                </label>
-                <label class="list-group-item list-group-item-action">
-                  <input class="form-check-input me-2" type="radio" name="hora" value="19:00" required>19:00
-                </label>
-                <label class="list-group-item list-group-item-action">
-                  <input class="form-check-input me-2" type="radio" name="hora" value="21:00" required>21:00
-                </label>
+        <section class="modal-body">
+          <form method="get" action="formulario-reserva.html">
+            
+            <input type="hidden" name="cancha" value="">
+
+            <div id="modal-alerta-horario" class="mb-3"></div>
+
+            <div class="row row-cols-3 row-cols-md-4 g-2 text-center">
+              
+              <div class="col">
+                <input type="radio" class="btn-check" name="hora" id="hora-0900" value="09:00" required autocomplete="off">
+                <label class="btn btn-outline-primary w-100" for="hora-0900">09:00</label>
+              </div>
+              
+              <div class="col">
+                <input type="radio" class="btn-check" name="hora" id="hora-1100" value="11:00" required autocomplete="off">
+                <label class="btn btn-outline-primary w-100" for="hora-1100">11:00</label>
               </div>
 
-              <div class="modal-footer p-3">
-                <button type="submit" class="btn btn-success w-100">Seguir completando el formulario</button>
+              <div class="col">
+                <input type="radio" class="btn-check" name="hora" id="hora-1300" value="13:00" required autocomplete="off">
+                <label class="btn btn-outline-primary w-100" for="hora-1300">13:00</label>
               </div>
-            </form>
-          </section>
-        </article>
-      </section>
-    </article>
-  </section>
+
+              <div class="col">
+                <input type="radio" class="btn-check" name="hora" id="hora-1500" value="15:00" required autocomplete="off">
+                <label class="btn btn-outline-primary w-100" for="hora-1500">15:00</label>
+              </div>
+
+              <div class="col">
+                <input type="radio" class="btn-check" name="hora" id="hora-1700" value="17:00" required autocomplete="off">
+                <label class="btn btn-outline-primary w-100" for="hora-1700">17:00</label>
+              </div>
+
+              <div class="col">
+                <input type="radio" class="btn-check" name="hora" id="hora-1900" value="19:00" required autocomplete="off">
+                <label class="btn btn-outline-primary w-100" for="hora-1900">19:00</label>
+              </div>
+
+              <div class="col">
+                <input type="radio" class="btn-check" name="hora" id="hora-2100" value="21:00" required autocomplete="off">
+                <label class="btn btn-outline-primary w-100" for="hora-2100">21:00</label>
+              </div>
+            </div>
+
+            <div class="modal-footer p-0 pt-4">
+              <button type="submit" class="btn btn-success w-100">Seguir completando el formulario</button>
+            </div>
+          </form>
+        </section> 
+      </article> 
+    </section> 
+  </article> 
+</section>
 
   <!-- SOBRE NOSOTROS -->
   <section id="sobre-nosotros" class="py-5">
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="text-light fw-bold">Sobre nosotros</h2>
-        <p class="text-light">Conocé quiénes somos y por qué amamos el pádel tanto como vos 🎾</p>
+        <p class="text-light">Conocé quiénes somos y por qué amamos el pádel tanto como vos</p>
       </div>
 
-      <!-- Bento Grid -->
+      <!-- Bento Grid  ¡AGREGAR ANIMACIÓN!-->
       <div class="row g-4">
 
         <!-- Imagen principal grande -->
@@ -156,10 +192,9 @@
             <img src="assets/img/nosotros-equipo.jpeg" class="img-fluid h-100 w-100 object-fit-cover"
               alt="equipo-padel">
             <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
-              <h4 class="text-dark fw-bold">Pasión por el pádel</h4>
-              <p class="text-dark">Creamos esta plataforma para que cada jugador encuentre su lugar en la
-                cancha,
-                fácil y rápido.</p>
+              <h4 class="text-white fw-bold">Pasión por el pádel</h4>
+              <p class="text-white">Creamos esta plataforma para que cada jugador encuentre su lugar en la
+                cancha, fácil y rápido.</p>
             </div>
           </div>
         </div>
@@ -203,23 +238,20 @@
     <div class="container">
       <div class="row">
 
-        <!-- Columna 1: Logo o nombre -->
         <div class="col-md-4 d-flex align-items-center justify-content text-center">
           <h4 class="fw-bold text-uppercase mb-0">Pádel Booking</h4>
         </div>
 
-        <!-- Columna 2: Navegación interna -->
         <div class="col-md-4">
           <h5 class="fw-bold mb-3">Enlaces útiles</h5>
           <ul class="list-unstyled">
             <li><a href="home.html" class="text-light text-decoration-none">Inicio</a></li>
-            <li><a href="formulario-reserva.html" class="text-light text-decoration-none">Reservar cancha</a></li>
+            <li><a href="#canchas" class="text-light text-decoration-none">Reservar cancha</a></li>
             <li><a href="mis-reservas.html" class="text-light text-decoration-none">Mis reservas</a></li>
             <li><a href="#sobre-nosotros" class="text-light text-decoration-none">Sobre nosotros</a></li>
           </ul>
         </div>
 
-        <!-- Columna 3: Redes sociales -->
         <div class="col-md-4">
           <h5 class="fw-bold mb-3">Seguinos</h5>
           <div class="d-flex gap-3">
@@ -233,7 +265,6 @@
 
       <hr class="border-secondary">
 
-      <!-- Copyright -->
       <div class="text-center text-muted small">
         © 2025 Pádel Booking — Todos los derechos reservados.
       </div>
@@ -241,7 +272,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 
