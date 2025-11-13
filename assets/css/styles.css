@@ -1,40 +1,127 @@
-.cancha-card { cursor: pointer; overflow: hidden; }
+.cancha-card { 
+  cursor: pointer; 
+  overflow: hidden; 
+}
 .cancha-card .overlay {
-  align-items: flex-end;          /* inicia abajo */
+  align-items: flex-end;
   justify-content: center;
   background: rgba(0,0,0,0.28);
+  transition: background .5s ease; 
 }
 .cancha-card:hover .overlay {
-  align-items: center;            /* sube el título al centro */
-  background: rgba(0,0,0,0.62);   /* se oscurece */
+  align-items: center;
+  background: rgba(0,0,0,0.62);
 }
 .cancha-card .overlay h5 { 
   margin:0; 
   color:#fff; 
   transform: translateY(8px); 
-  transition: transform .25s ease; 
+  transition: transform .5s ease; 
 }
 .cancha-card:hover .overlay h5 { 
   transform: translateY(0); 
 }
+
 .cancha-card .card-img { 
-  transition: transform .25s ease; 
+  transition: transform .5s ease, opacity .5s ease; 
   display:block; 
   width:100%; 
 }
 .cancha-card:hover .card-img { 
-  transform: scale(1.03); 
+  transform: scale(1.03);
+  opacity: 0;
+}
+
+/* hover */
+.cancha-card .card-img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  transition: transform .5s ease, opacity .5s ease;
+}
+.cancha-card:hover .card-img-hover {
+  opacity: 1;
+  transform: scale(1.03);
 }
 
 #sobre-nosotros .card-img-overlay {
   background-image: linear-gradient(
     to top, 
-    rgba(0, 0, 0, 0.8) 0%,  /* Negro con 80% opacidad abajo */
-    rgba(0, 0, 0, 0.4) 40%, /* Negro con 40% opacidad en el medio */
-    transparent 100%        /* Transparente arriba */
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    transparent 100%
   ) !important;
 }
 
 .bento-item {
-  transition: flex-basis 0.5s ease, max-width 0.5s ease;
+  /* transición con flex-basis */
+  transition: flex-basis .48s ease-in-out, max-width .48s ease-in-out, box-shadow .32s ease-in-out;
+}
+
+
+@media (min-width: 992px) {
+  #bento-grid { display: flex; flex-wrap: nowrap; align-items: stretch; gap: 1rem; }
+  #bento-grid, #bento-grid .bento-item { overflow: visible; }
+
+  #bento-grid .bento-item { min-width: 0; }
+
+  #bento-grid .bento-item .card { height: 320px; min-height:320px; max-height:320px; overflow:hidden; box-sizing:border-box; }
+  #bento-grid .bento-item.first .card { height: 320px; min-height:320px; max-height:320px; }
+
+  #bento-grid .bento-item .card img,
+  #bento-grid .bento-item .card .card-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #bento-grid .bento-item.first {
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+  #bento-grid .bento-item {
+    flex: 0 0 calc(25% - 0.5rem);
+    max-width: calc(25% - 0.5rem);
+  }
+
+  /* transiciones flex-basis/max-width */
+  #bento-grid .bento-item,
+  #bento-grid .bento-item.first {
+    transition: flex-basis .48s ease-in-out, max-width .48s ease-in-out, box-shadow .32s ease-in-out;
+    will-change: flex-basis, max-width, transform;
+    z-index: 0;
+  }
+
+  /* valor 50% y los demas 25% */
+  #bento-grid:hover .bento-item:hover {
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+    z-index: 6;
+  }
+  #bento-grid:hover .bento-item:not(:hover) {
+    flex: 0 0 calc(25% - 0.5rem);
+    max-width: calc(25% - 0.5rem);
+    z-index: 2;
+  }
+
+  #bento-grid .bento-item .card img,
+  #bento-grid .bento-item .card .card-img {
+    transition: transform .42s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: none; /* no scale heredado */
+  }
+
+  #bento-grid .bento-item:hover .card {
+    box-shadow: 0 .6rem 1.2rem rgba(0,0,0,0.28);
+  }
 }

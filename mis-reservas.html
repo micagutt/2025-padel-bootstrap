@@ -9,7 +9,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body class="bg-dark min-vh-100 d-flex flex-column">
+<body class="bg-dark">
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
@@ -22,19 +22,22 @@
             </button>
 
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="formulario-reserva.html">Reservar cancha</a>
+                        <a class="nav-link" href="home.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="mis-reservas.html">Mis reservas</a>
+                        <a class="nav-link" href="formulario-reserva.html">Reservar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="mis-reservas.html">Mis Reservas</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container py-5 flex-grow-1">
+    <main class="container py-5 min-vh-100">>
 
         <div class="row mb-2">
             <div class="col-12">
@@ -61,12 +64,39 @@
 
         <div class="alert alert-info d-none" id="alerta-vacio" role="alert">
             <h4 class="alert-heading">¡Todavía no tenés reservas!</h4>
-            <p>Parece que no tenés ninguna cancha reservada. ¡Andá a la <a href="home.html#canchas" class="alert-link">sección de canchas</a> para reservar la tuya!</p>
+            <p>Parece que no tenés ninguna cancha reservada. ¡Andá a la <a href="home.html#canchas"
+                    class="alert-link">sección de canchas</a> para reservar la tuya!</p>
         </div>
 
         <div class="row" id="contenedor-reservas">
 
         </div>
+
+        <div class="modal fade" id="modalConfirmarCancelacion" tabindex="-1" aria-labelledby="modalConfirmarLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark text-light border border-secondary">
+
+                    <div class="modal-header border-bottom border-secondary">
+                        <h5 class="modal-title" id="modalConfirmarLabel">Confirmar Cancelación</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>¿Estás seguro de que querés cancelar esta reserva?</p>
+                        <p class="text-white-50 small mb-0">Esta acción no se puede deshacer.</p>
+                    </div>
+
+                    <div class="modal-footer border-top border-secondary">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Volver</button>
+                        <button type="button" class="btn btn-danger" id="btn-confirmar-cancelacion">Sí,
+                            cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="bg-primary text-light pt-5 pb-3 mt-5">
@@ -83,7 +113,8 @@
                         <li><a href="home.html" class="text-light text-decoration-none">Inicio</a></li>
                         <li><a href="home.html#canchas" class="text-light text-decoration-none">Reservar cancha</a></li>
                         <li><a href="mis-reservas.html" class="text-light text-decoration-none">Mis reservas</a></li>
-                        <li><a href="home.html#sobre-nosotros" class="text-light text-decoration-none">Sobre nosotros</a></li>
+                        <li><a href="home.html#sobre-nosotros" class="text-light text-decoration-none">Sobre
+                                nosotros</a></li>
                     </ul>
                 </div>
 

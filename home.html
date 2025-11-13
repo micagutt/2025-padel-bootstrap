@@ -23,12 +23,15 @@
       </button>
 
       <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-white" href="formulario-reserva.html">Reservar cancha</a>
+            <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="mis-reservas.html">Mis reservas</a>
+            <a class="nav-link" href="formulario-reserva.html">Reservar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mis-reservas.html">Mis Reservas</a>
           </li>
         </ul>
       </div>
@@ -46,7 +49,8 @@
 
           <div class="row">
             <div class="col-12 col-md-10 col-lg-8">
-              <p class="lead mb-4 text-white-50">La mejor experiencia para juntarte a jugar pádel, reservá rápido y fácil, elegí horario y cancha.</p>
+              <p class="lead mb-4 text-white-50">La mejor experiencia para juntarte a jugar pádel, reservá rápido y
+                fácil, elegí horario y cancha.</p>
             </div>
           </div>
 
@@ -58,8 +62,35 @@
 
         <div class="col-lg-5 d-none d-lg-block">
           <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-            <img src="assets/img/personas-jugando.jpeg" class="w-100 h-100 object-fit-cover" alt="Decorativo"
-              loading="lazy">
+            <div id="homeHeroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel"
+              data-bs-interval="3000" data-bs-pause="false">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="assets/img/personas-jugando.jpeg" class="d-block w-100 h-100 object-fit-cover"
+                    alt="Gente jugando" loading="lazy">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="assets/img/gente-jugando-al-padel-dentro.jpg" class="d-block w-100 h-100 object-fit-cover"
+                    alt="Jugadores" loading="lazy">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="assets/img/cancha-techada.png" class="d-block w-100 h-100 object-fit-cover"
+                    alt="Cancha techada" loading="lazy">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="assets/img/cancha-norte.png" class="d-block w-100 h-100 object-fit-cover" alt="Cancha norte"
+                    loading="lazy">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="assets/img/cancha-sur.png" class="d-block w-100 h-100 object-fit-cover" alt="Cancha sur"
+                    loading="lazy">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="assets/img/persona-padel-hover-norte.webp" class="d-block w-100 h-100 object-fit-cover"
+                    alt="Equipo" loading="lazy">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -73,33 +104,42 @@
 
     <div class="row g-4 justify-content-center">
 
-      <!-- Cancha Techada -->
       <article class="col-md-4">
         <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
           data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Techada" role="button" tabindex="0">
+
           <img src="assets/img/cancha-techada.png" class="card-img" alt="Cancha Techada">
+
+          <img src="assets/img/personas-padel.avif" class="card-img card-img-hover" alt="personas-cancha-techada">
+
           <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
             <h5 class="mb-0 fw-bold text-white">Cancha Techada</h5>
           </div>
         </div>
       </article>
 
-      <!-- Cancha Norte -->
       <article class="col-md-4">
         <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
           data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Norte" role="button" tabindex="0">
+
           <img src="assets/img/cancha-norte.png" class="card-img" alt="Cancha Norte">
+
+          <img src="assets/img/persona-padel-hover-norte.webp" class="card-img card-img-hover" alt="">
+
           <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
             <h5 class="mb-0 fw-bold text-white">Cancha Norte</h5>
           </div>
         </div>
       </article>
 
-      <!-- Cancha Sur -->
       <article class="col-md-4">
         <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
           data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Sur" role="button" tabindex="0">
+
           <img src="assets/img/cancha-sur.png" class="card-img" alt="Cancha Sur">
+
+          <img src="assets/img/personas-padel-hover-sur.jpg" class="card-img card-img-hover" alt="">
+
           <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
             <h5 class="mb-0 fw-bold text-white">Cancha Sur</h5>
           </div>
@@ -111,69 +151,77 @@
 
   <!-- MODAL HORARIOS -->
   <section>
-  <article class="modal fade" id="modalTechada" tabindex="-1" aria-labelledby="modalTechadaLabel" aria-hidden="true">
-    <section class="modal-dialog modal-dialog-centered">
-      <article class="modal-content shadow rounded-4 overflow-hidden">
+    <article class="modal fade" id="modalTechada" tabindex="-1" aria-labelledby="modalTechadaLabel" aria-hidden="true">
+      <section class="modal-dialog modal-dialog-centered">
+        <article class="modal-content shadow rounded-4 overflow-hidden">
 
-        <header class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="modalTechadaLabel">Seleccioná un horario</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </header>
+          <header class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="modalTechadaLabel">Seleccioná un horario</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </header>
 
-        <section class="modal-body">
-          <form method="get" action="formulario-reserva.html">
-            
-            <input type="hidden" name="cancha" value="">
+          <section class="modal-body">
+            <form method="get" action="formulario-reserva.html">
 
-            <div id="modal-alerta-horario" class="mb-3"></div>
+              <input type="hidden" name="cancha" value="">
 
-            <div class="row row-cols-3 row-cols-md-4 g-2 text-center">
-              
-              <div class="col">
-                <input type="radio" class="btn-check" name="hora" id="hora-0900" value="09:00" required autocomplete="off">
-                <label class="btn btn-outline-primary w-100" for="hora-0900">09:00</label>
+              <div id="modal-alerta-horario" class="mb-3"></div>
+
+              <div class="row row-cols-3 row-cols-md-4 g-2 text-center">
+
+                <div class="col">
+                  <input type="radio" class="btn-check" name="hora" id="hora-0900" value="09:00" required
+                    autocomplete="off">
+                  <label class="btn btn-outline-primary w-100" for="hora-0900">09:00</label>
+                </div>
+
+                <div class="col">
+                  <input type="radio" class="btn-check" name="hora" id="hora-1100" value="11:00" required
+                    autocomplete="off">
+                  <label class="btn btn-outline-primary w-100" for="hora-1100">11:00</label>
+                </div>
+
+                <div class="col">
+                  <input type="radio" class="btn-check" name="hora" id="hora-1300" value="13:00" required
+                    autocomplete="off">
+                  <label class="btn btn-outline-primary w-100" for="hora-1300">13:00</label>
+                </div>
+
+                <div class="col">
+                  <input type="radio" class="btn-check" name="hora" id="hora-1500" value="15:00" required
+                    autocomplete="off">
+                  <label class="btn btn-outline-primary w-100" for="hora-1500">15:00</label>
+                </div>
+
+                <div class="col">
+                  <input type="radio" class="btn-check" name="hora" id="hora-1700" value="17:00" required
+                    autocomplete="off">
+                  <label class="btn btn-outline-primary w-100" for="hora-1700">17:00</label>
+                </div>
+
+                <div class="col">
+                  <input type="radio" class="btn-check" name="hora" id="hora-1900" value="19:00" required
+                    autocomplete="off">
+                  <label class="btn btn-outline-primary w-100" for="hora-1900">19:00</label>
+                </div>
+
+                <div class="col">
+                  <input type="radio" class="btn-check" name="hora" id="hora-2100" value="21:00" required
+                    autocomplete="off">
+                  <label class="btn btn-outline-primary w-100" for="hora-2100">21:00</label>
+                </div>
               </div>
-              
-              <div class="col">
-                <input type="radio" class="btn-check" name="hora" id="hora-1100" value="11:00" required autocomplete="off">
-                <label class="btn btn-outline-primary w-100" for="hora-1100">11:00</label>
-              </div>
 
-              <div class="col">
-                <input type="radio" class="btn-check" name="hora" id="hora-1300" value="13:00" required autocomplete="off">
-                <label class="btn btn-outline-primary w-100" for="hora-1300">13:00</label>
+              <div class="modal-footer p-0 pt-4">
+                <button type="submit" class="btn btn-success w-100">Seguir completando el formulario</button>
               </div>
-
-              <div class="col">
-                <input type="radio" class="btn-check" name="hora" id="hora-1500" value="15:00" required autocomplete="off">
-                <label class="btn btn-outline-primary w-100" for="hora-1500">15:00</label>
-              </div>
-
-              <div class="col">
-                <input type="radio" class="btn-check" name="hora" id="hora-1700" value="17:00" required autocomplete="off">
-                <label class="btn btn-outline-primary w-100" for="hora-1700">17:00</label>
-              </div>
-
-              <div class="col">
-                <input type="radio" class="btn-check" name="hora" id="hora-1900" value="19:00" required autocomplete="off">
-                <label class="btn btn-outline-primary w-100" for="hora-1900">19:00</label>
-              </div>
-
-              <div class="col">
-                <input type="radio" class="btn-check" name="hora" id="hora-2100" value="21:00" required autocomplete="off">
-                <label class="btn btn-outline-primary w-100" for="hora-2100">21:00</label>
-              </div>
-            </div>
-
-            <div class="modal-footer p-0 pt-4">
-              <button type="submit" class="btn btn-success w-100">Seguir completando el formulario</button>
-            </div>
-          </form>
-        </section> 
-      </article> 
-    </section> 
-  </article> 
-</section>
+            </form>
+          </section>
+        </article>
+      </section>
+    </article>
+  </section>
 
   <!-- SOBRE NOSOTROS -->
   <section id="sobre-nosotros" class="py-5">
@@ -183,40 +231,43 @@
         <p class="text-light">Conocé quiénes somos y por qué amamos el pádel tanto como vos</p>
       </div>
 
-      <!-- Bento Grid  ¡AGREGAR ANIMACIÓN!-->
+      <!-- Bento Grid -->
       <div class="row g-4">
+        <div class="col-12">
+          <div id="bento-grid">
 
-        <!-- Imagen principal grande -->
-        <div class="col-lg-6">
-          <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
-            <img src="assets/img/nosotros-equipo.jpeg" class="img-fluid h-100 w-100 object-fit-cover"
-              alt="equipo-padel">
-            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
-              <h4 class="text-white fw-bold">Pasión por el pádel</h4>
-              <p class="text-white">Creamos esta plataforma para que cada jugador encuentre su lugar en la
-                cancha, fácil y rápido.</p>
+            <!-- Imagen principal grande -->
+            <div class="bento-item first">
+              <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
+                <img src="assets/img/nosotros-equipo.jpeg" class="img-fluid h-100 w-100 object-fit-cover"
+                  alt="equipo-padel">
+                <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
+                  <h4 class="text-white fw-bold">Pasión por el pádel</h4>
+                  <p class="text-white">Creamos esta plataforma para que cada jugador encuentre su lugar en la
+                    cancha, fácil y rápido.</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Dos tarjetas pequeñas -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
-            <img src="assets/img/pelotas-padel.jpg" class="card-img" alt="Cancha de pádel" loading="lazy">
-            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
-              <h4 class="fw-bold text-white">Rápido y simple</h4>
-              <p class="text-white">Reservá tu cancha en menos de un minuto.</p>
+            <!-- Dos tarjetas pequeñas -->
+            <div class="bento-item">
+              <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
+                <img src="assets/img/pelotas-padel.jpg" class="card-img" alt="Cancha de pádel" loading="lazy">
+                <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
+                  <h4 class="fw-bold text-white">Rápido y simple</h4>
+                  <p class="text-white">Reservá tu cancha en menos de un minuto.</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-lg-3 col-sm-6">
-          <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
-            <img src="assets/img/gente-jugando-al-padel-dentro.jpg" class="card-img" alt="Cancha de pádel"
-              loading="lazy">
-            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
-              <h4 class="fw-bold text-white">Jugadores unidos</h4>
-              <p class="text-white">Armá partidos con amigos o nuevos rivales.</p>
+            <div class="bento-item">
+              <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
+                <img src="assets/img/personas-padel.avif" class="card-img" alt="Cancha de pádel" loading="lazy">
+                <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
+                  <h4 class="fw-bold text-white">Jugadores unidos</h4>
+                  <p class="text-white">Armá partidos con amigos o nuevos rivales.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -255,8 +306,10 @@
         <div class="col-md-4">
           <h5 class="fw-bold mb-3">Seguinos</h5>
           <div class="d-flex gap-3">
-            <a href="https://www.instagram.com/" class="text-light text-decoration-none fs-6" aria-label="Instagram">Instagram</a>
-            <a href="https://www.facebook.com/" class="text-light text-decoration-none fs-6" aria-label="Facebook">Facebook</a>
+            <a href="https://www.instagram.com/" class="text-light text-decoration-none fs-6"
+              aria-label="Instagram">Instagram</a>
+            <a href="https://www.facebook.com/" class="text-light text-decoration-none fs-6"
+              aria-label="Facebook">Facebook</a>
             <a href="https://x.com/" class="text-light text-decoration-none fs-6" aria-label="Twitter">Twitter</a>
           </div>
         </div>
