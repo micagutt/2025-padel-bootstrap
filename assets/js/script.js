@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let modalConfirmar;
     let idParaCancelar;
+    let modalReservaExitosa;
 
     // lista de horarios fijos
     const horariosFijos = ["09:00", "11:00", "13:00", "15:00", "17:00", "19:00", "21:00"];
@@ -10,22 +11,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalElement = document.getElementById('modalConfirmarCancelacion');
     if (modalElement) {
         modalConfirmar = new bootstrap.Modal(modalElement);
-        
+
         const btnConfirmar = document.getElementById('btn-confirmar-cancelacion');
-        
+
         btnConfirmar.addEventListener('click', () => {
             if (idParaCancelar) {
-                cancelarReserva(idParaCancelar); 
+                cancelarReserva(idParaCancelar);
             }
-            modalConfirmar.hide(); 
+            modalConfirmar.hide();
+            // foco fuera del modal
+            document.activeElement.blur();
         });
+    }
+
+    // modal de éxito
+    const modalExitoElement = document.getElementById('modalReservaExitosa');
+    if (modalExitoElement) {
+        modalReservaExitosa = new bootstrap.Modal(modalExitoElement);
     }
 
     // modal de horarios (home.html)
     const modalHorarios = document.getElementById('modalTechada');
     if (modalHorarios) {
         modalHorarios.addEventListener('show.bs.modal', function (event) {
-            
+
             const card = event.relatedTarget;
             const nombreCancha = card.getAttribute('data-cancha');
             const modalTitle = modalHorarios.querySelector('.modal-title');
@@ -35,10 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const hoy = getHoyYYYYMMDD();
             const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
-            
+
             const horariosOcupados = reservas
                 .filter(r => r.cancha === nombreCancha && r.fecha === hoy)
-                .map(r => r.hora); 
+                .map(r => r.hora);
 
             const inputsHorarios = modalHorarios.querySelectorAll(".btn-check");
             inputsHorarios.forEach(input => {
@@ -46,10 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 const horario = input.value;
 
                 input.disabled = false;
-                input.checked = false; 
+                input.checked = false;
                 label.classList.remove('disabled', 'btn-outline-danger', 'btn-outline-secondary');
                 label.classList.add('btn-outline-primary');
-                label.textContent = horario; 
+                label.textContent = horario;
 
                 if (horariosOcupados.includes(horario)) {
                     input.disabled = true;
@@ -71,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (contenedorAlerta) contenedorAlerta.innerHTML = "";
 
                 if (!horario) {
-                    event.preventDefault(); 
+                    event.preventDefault();
                     if (contenedorAlerta) {
                         const wrapper = document.createElement('div');
                         wrapper.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -90,8 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     .map(r => r.hora);
 
                 if (horariosOcupados.includes(horario)) {
-                    // si está ocupado, no se envía y sale la alerta
-                    event.preventDefault(); 
+                    event.preventDefault();
                     if (contenedorAlerta) {
                         const wrapper = document.createElement('div');
                         wrapper.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -111,10 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // formulario de reserva (formulario-reserva.html)
     const formReserva = document.getElementById("reservaForm");
     if (formReserva) {
-        
+
         const canchaSelect = document.getElementById("cancha");
         const fechaInput = document.getElementById("fecha");
-        const horaSelect = document.getElementById("hora"); 
+        const horaSelect = document.getElementById("hora");
 
         horaSelect.innerHTML = '<option value="" disabled selected>Seleccioná un horario</option>';
         horariosFijos.forEach(h => {
@@ -137,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
                 return;
-            }; 
+            };
 
             const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
             const horariosOcupados = reservas
@@ -145,14 +153,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 .map(r => r.hora);
 
             Array.from(horaSelect.options).forEach(option => {
-                if (option.value) { 
+                if (option.value) {
                     option.disabled = false;
-                    option.style.color = "#000"; 
+                    option.style.color = "#000";
                     option.text = option.value;
 
                     if (horariosOcupados.includes(option.value)) {
                         option.disabled = true;
-                        option.style.color = "#6c757d"; 
+                        option.style.color = "#6c757d";
                         option.text = `${option.value} (Ocupado)`;
                     }
                 }
@@ -161,13 +169,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         canchaSelect.addEventListener('change', actualizarHorariosSelect);
         fechaInput.addEventListener('change', actualizarHorariosSelect);
-        
+
         const reservaTemporal = JSON.parse(localStorage.getItem("reservaTemporal"));
         if (reservaTemporal) {
             canchaSelect.value = reservaTemporal.cancha;
-            horaSelect.value = reservaTemporal.horario; 
+            horaSelect.value = reservaTemporal.horario;
         }
-        
+
         actualizarHorariosSelect();
 
         formReserva.addEventListener("submit", (event) => {
@@ -187,10 +195,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 reservasPrevias.push(reserva);
                 localStorage.setItem("reservas", JSON.stringify(reservasPrevias));
                 localStorage.removeItem("reservaTemporal");
-                mostrarAlerta("¡Reserva guardada exitosamente!", "success", formReserva);
+
+                // modal de exito
+                if (modalReservaExitosa) {
+                    modalReservaExitosa.show();
+                }
+
                 formReserva.reset();
-                formReserva.classList.remove('was-validated'); 
-                
+                formReserva.classList.remove('was-validated');
+
+                // recargar horarios
                 horaSelect.innerHTML = '<option value="" disabled selected>Seleccioná un horario</option>';
                 horariosFijos.forEach(h => {
                     const option = document.createElement('option');
@@ -270,25 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
         reservas = reservas.filter(reserva => reserva.id !== id);
         localStorage.setItem("reservas", JSON.stringify(reservas));
-        cargarReservas(); 
-    }
-
-    function mostrarAlerta(mensaje, tipo, contenedor) {
-        const alertaPrevia = contenedor.querySelector('.alert');
-        if (alertaPrevia) {
-            alertaPrevia.remove();
-        }
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = `
-            <div class="alert alert-${tipo} alert-dismissible fade show mt-3" role="alert">
-                ${mensaje}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        `;
-        contenedor.prepend(wrapper);
-        setTimeout(() => {
-            wrapper.querySelector('.alert')?.remove();
-        }, 3000);
+        cargarReservas();
     }
 
 });

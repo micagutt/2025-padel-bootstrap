@@ -125,3 +125,37 @@
     box-shadow: 0 .6rem 1.2rem rgba(0,0,0,0.28);
   }
 }
+
+/* Círculo 1 */
+#hero::before {
+  content: '';
+  position: absolute; 
+  z-index: 0; 
+  
+  background: radial-gradient(circle, rgba(93, 68, 131, 0.45), transparent 60%); 
+  filter: blur(60px); 
+
+  width: 1000px;
+  height: 1000px;
+  
+  top: -200px; 
+  left: -200px;
+  border-radius: 50%;
+}
+
+/* Círculo 2 */
+#hero::after {
+  content: '';
+  position: absolute; 
+  z-index: 0;
+  
+  background: radial-gradient(circle, rgba(50, 200, 150, 0.4), transparent 60%);
+  filter: blur(70px);
+
+  width: 900px;
+  height: 900px;
+  
+  bottom: -50px; 
+  right: -100px; 
+  border-radius: 50%;
+}
