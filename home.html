@@ -13,282 +13,290 @@
 <body class="bg-dark">
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="home.html">PadelBook</a>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="home.html">PadelBook</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="formulario-reserva.html">Reservar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mis-reservas.html">Mis Reservas</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="formulario-reserva.html">Reservar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mis-reservas.html">Mis Reservas</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <!-- INVITACIÓN A JUGAR -->
-  <section id="hero" class="container-fluid position-relative overflow-hidden bg-dark text-light py-5 position-relative">
+  <main>
+    <!-- INVITACIÓN A JUGAR -->
+    <section id="hero"
+      class="container-fluid position-relative overflow-hidden bg-dark text-light py-5 position-relative">
 
-    <div class="container py-5 position-relative z-index-1">
-      <div class="row align-items-center">
-        <div class="col-lg-7">
+      <div class="container py-5 position-relative z-index-1">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
 
-          <h1 class="display-4 fw-bold lh-sm mb-3">Encontrá tu cancha y reservá en segundos</h1>
+            <h1 class="display-4 fw-bold lh-sm mb-3">Encontrá tu cancha y reservá en segundos</h1>
 
-          <div class="row">
-            <div class="col-12 col-md-10 col-lg-8">
-              <p class="lead mb-4 text-white-50">La mejor experiencia para juntarte a jugar pádel, reservá rápido y
-                fácil, elegí horario y cancha.</p>
+            <div class="row">
+              <div class="col-12 col-md-10 col-lg-8">
+                <p class="lead mb-4 text-white-50">La mejor experiencia para juntarte a jugar pádel, reservá rápido y
+                  fácil, elegí horario y cancha.</p>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 d-sm-flex">
+              <a href="#canchas" class="btn btn-light btn-lg me-sm-2">Reservar ahora</a>
+              <a href="mis-reservas.html" class="btn btn-outline-light btn-lg">Mis reservas</a>
             </div>
           </div>
 
-          <div class="d-grid gap-2 d-sm-flex">
-            <a href="#canchas" class="btn btn-light btn-lg me-sm-2">Reservar ahora</a>
-            <a href="mis-reservas.html" class="btn btn-outline-light btn-lg">Mis reservas</a>
-          </div>
-        </div>
-
-        <div class="col-lg-5 d-none d-lg-block">
-          <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-            <div id="homeHeroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel"
-              data-bs-interval="3000" data-bs-pause="false">
-              <div class="carousel-inner h-100">
-                <div class="carousel-item active h-100">
-                  <img src="assets/img/personas-jugando.jpeg" class="d-block w-100 h-100 object-fit-cover"
-                    alt="Gente jugando" loading="lazy">
-                </div>
-                <div class="carousel-item h-100">
-                  <img src="assets/img/gente-jugando-al-padel-dentro.jpg" class="d-block w-100 h-100 object-fit-cover"
-                    alt="Jugadores" loading="lazy">
-                </div>
-                <div class="carousel-item h-100">
-                  <img src="assets/img/cancha-techada.png" class="d-block w-100 h-100 object-fit-cover"
-                    alt="Cancha techada" loading="lazy">
-                </div>
-                <div class="carousel-item h-100">
-                  <img src="assets/img/cancha-norte.png" class="d-block w-100 h-100 object-fit-cover" alt="Cancha norte"
-                    loading="lazy">
-                </div>
-                <div class="carousel-item h-100">
-                  <img src="assets/img/cancha-sur.png" class="d-block w-100 h-100 object-fit-cover" alt="Cancha sur"
-                    loading="lazy">
-                </div>
-                <div class="carousel-item h-100">
-                  <img src="assets/img/persona-padel-hover-norte.webp" class="d-block w-100 h-100 object-fit-cover"
-                    alt="Equipo" loading="lazy">
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <div id="homeHeroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel"
+                data-bs-interval="3000" data-bs-pause="false">
+                <div class="carousel-inner h-100">
+                  <div class="carousel-item active h-100">
+                    <img src="assets/img/personas-jugando.jpeg" class="d-block w-100 h-100 object-fit-cover"
+                      alt="Gente jugando" loading="lazy">
+                  </div>
+                  <div class="carousel-item h-100">
+                    <img src="assets/img/gente-jugando-al-padel-dentro.jpg" class="d-block w-100 h-100 object-fit-cover"
+                      alt="Jugadores" loading="lazy">
+                  </div>
+                  <div class="carousel-item h-100">
+                    <img src="assets/img/cancha-techada.png" class="d-block w-100 h-100 object-fit-cover"
+                      alt="Cancha techada" loading="lazy">
+                  </div>
+                  <div class="carousel-item h-100">
+                    <img src="assets/img/cancha-norte.png" class="d-block w-100 h-100 object-fit-cover"
+                      alt="Cancha norte" loading="lazy">
+                  </div>
+                  <div class="carousel-item h-100">
+                    <img src="assets/img/cancha-sur.png" class="d-block w-100 h-100 object-fit-cover" alt="Cancha sur"
+                      loading="lazy">
+                  </div>
+                  <div class="carousel-item h-100">
+                    <img src="assets/img/persona-padel-hover-norte.webp" class="d-block w-100 h-100 object-fit-cover"
+                      alt="Equipo" loading="lazy">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECCIÓN CANCHAS -->
-  <section id="canchas" class="container py-5">
-    <h1 class="text-center text-light mb-2 fw-bold lh-sm">Nuestras canchas</h1>
-    <h4 class="text-center text-light mb-5 lead">¡No te quedes sin tu lugar!</h4>
+    <!-- SECCIÓN CANCHAS -->
+    <section id="canchas" class="container py-5">
+      <h1 class="text-center text-light mb-2 fw-bold lh-sm">Nuestras canchas</h1>
+      <h4 class="text-center text-light mb-5 lead">¡No te quedes sin tu lugar!</h4>
 
-    <div class="row g-4 justify-content-center">
+      <div class="row g-4 justify-content-center">
 
-      <article class="col-md-4">
-        <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
-          data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Techada" role="button" tabindex="0">
+        <article class="col-md-4">
+          <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
+            data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Techada" role="button"
+            tabindex="0">
 
-          <img src="assets/img/cancha-techada.png" class="card-img" alt="Cancha Techada">
+            <img src="assets/img/cancha-techada.png" class="card-img" alt="Cancha Techada">
 
-          <img src="assets/img/personas-padel.avif" class="card-img card-img-hover" alt="personas-cancha-techada">
+            <img src="assets/img/personas-padel.avif" class="card-img card-img-hover" alt="personas-cancha-techada">
 
-          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
-            <h5 class="mb-0 fw-bold text-white">Cancha Techada</h5>
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
+              <h5 class="mb-0 fw-bold text-white">Cancha Techada</h5>
+            </div>
           </div>
-        </div>
-      </article>
-
-      <article class="col-md-4">
-        <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
-          data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Norte" role="button" tabindex="0">
-
-          <img src="assets/img/cancha-norte.png" class="card-img" alt="Cancha Norte">
-
-          <img src="assets/img/persona-padel-hover-norte.webp" class="card-img card-img-hover" alt="">
-
-          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
-            <h5 class="mb-0 fw-bold text-white">Cancha Norte</h5>
-          </div>
-        </div>
-      </article>
-
-      <article class="col-md-4">
-        <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
-          data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Sur" role="button" tabindex="0">
-
-          <img src="assets/img/cancha-sur.png" class="card-img" alt="Cancha Sur">
-
-          <img src="assets/img/personas-padel-hover-sur.jpg" class="card-img card-img-hover" alt="">
-
-          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
-            <h5 class="mb-0 fw-bold text-white">Cancha Sur</h5>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- MODAL HORARIOS -->
-  <section>
-    <article class="modal fade" id="modalTechada" tabindex="-1" aria-labelledby="modalTechadaLabel" aria-hidden="true">
-      <section class="modal-dialog modal-dialog-centered">
-        <article class="modal-content shadow rounded-4 overflow-hidden">
-
-          <header class="modal-header bg-primary text-white">
-            <h5 class="modal-title" id="modalTechadaLabel">Seleccioná un horario</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-              aria-label="Cerrar"></button>
-          </header>
-
-          <section class="modal-body">
-            <form method="get" action="formulario-reserva.html">
-
-              <input type="hidden" name="cancha" value="">
-
-              <div id="modal-alerta-horario" class="mb-3"></div>
-
-              <div class="row row-cols-3 row-cols-md-4 g-2 text-center">
-
-                <div class="col">
-                  <input type="radio" class="btn-check" name="hora" id="hora-0900" value="09:00" required
-                    autocomplete="off">
-                  <label class="btn btn-outline-primary w-100" for="hora-0900">09:00</label>
-                </div>
-
-                <div class="col">
-                  <input type="radio" class="btn-check" name="hora" id="hora-1100" value="11:00" required
-                    autocomplete="off">
-                  <label class="btn btn-outline-primary w-100" for="hora-1100">11:00</label>
-                </div>
-
-                <div class="col">
-                  <input type="radio" class="btn-check" name="hora" id="hora-1300" value="13:00" required
-                    autocomplete="off">
-                  <label class="btn btn-outline-primary w-100" for="hora-1300">13:00</label>
-                </div>
-
-                <div class="col">
-                  <input type="radio" class="btn-check" name="hora" id="hora-1500" value="15:00" required
-                    autocomplete="off">
-                  <label class="btn btn-outline-primary w-100" for="hora-1500">15:00</label>
-                </div>
-
-                <div class="col">
-                  <input type="radio" class="btn-check" name="hora" id="hora-1700" value="17:00" required
-                    autocomplete="off">
-                  <label class="btn btn-outline-primary w-100" for="hora-1700">17:00</label>
-                </div>
-
-                <div class="col">
-                  <input type="radio" class="btn-check" name="hora" id="hora-1900" value="19:00" required
-                    autocomplete="off">
-                  <label class="btn btn-outline-primary w-100" for="hora-1900">19:00</label>
-                </div>
-
-                <div class="col">
-                  <input type="radio" class="btn-check" name="hora" id="hora-2100" value="21:00" required
-                    autocomplete="off">
-                  <label class="btn btn-outline-primary w-100" for="hora-2100">21:00</label>
-                </div>
-              </div>
-
-              <div class="modal-footer p-0 pt-4">
-                <button type="submit" class="btn btn-success w-100">Seguir completando el formulario</button>
-              </div>
-            </form>
-          </section>
         </article>
-      </section>
-    </article>
-  </section>
 
-  <!-- SOBRE NOSOTROS -->
-  <section id="sobre-nosotros" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="text-light fw-bold">Sobre nosotros</h2>
-        <p class="text-light">Conocé quiénes somos y por qué amamos el pádel tanto como vos</p>
+        <article class="col-md-4">
+          <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
+            data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Norte" role="button" tabindex="0">
+
+            <img src="assets/img/cancha-norte.png" class="card-img" alt="Cancha Norte">
+
+            <img src="assets/img/persona-padel-hover-norte.webp" class="card-img card-img-hover" alt="personas-cancha-norte">
+
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
+              <h5 class="mb-0 fw-bold text-white">Cancha Norte</h5>
+            </div>
+          </div>
+        </article>
+
+        <article class="col-md-4">
+          <div class="card border-0 position-relative overflow-hidden rounded-4 shadow-sm cancha-card"
+            data-bs-toggle="modal" data-bs-target="#modalTechada" data-cancha="Cancha Sur" role="button" tabindex="0">
+
+            <img src="assets/img/cancha-sur.png" class="card-img" alt="Cancha Sur">
+
+            <img src="assets/img/personas-padel-hover-sur.jpg" class="card-img card-img-hover" alt="personas-cancha-sur">
+
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex p-3">
+              <h5 class="mb-0 fw-bold text-white">Cancha Sur</h5>
+            </div>
+          </div>
+        </article>
+
       </div>
+    </section>
 
-      <!-- Bento Grid -->
-      <div class="row g-4">
-        <div class="col-12">
-          <div id="bento-grid">
+    <!-- MODAL HORARIOS -->
+    <section>
+      <article class="modal fade" id="modalTechada" tabindex="-1" aria-labelledby="modalTechadaLabel"
+        aria-hidden="true">
+        <section class="modal-dialog modal-dialog-centered">
+          <article class="modal-content shadow rounded-4 overflow-hidden">
 
-            <!-- Imagen principal grande -->
-            <div class="bento-item first">
-              <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
-                <img src="assets/img/nosotros-equipo.jpeg" class="img-fluid h-100 w-100 object-fit-cover"
-                  alt="equipo-padel">
-                <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
-                  <h4 class="text-white fw-bold">Pasión por el pádel</h4>
-                  <p class="text-white">Creamos esta plataforma para que cada jugador encuentre su lugar en la
-                    cancha, fácil y rápido.</p>
+            <header class="modal-header bg-primary text-white">
+              <h5 class="modal-title" id="modalTechadaLabel">Seleccioná un horario</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                aria-label="Cerrar"></button>
+            </header>
+
+            <section class="modal-body">
+              <form method="get" action="formulario-reserva.html">
+
+                <input type="hidden" name="cancha" value="">
+
+                <div id="modal-alerta-horario" class="mb-3"></div>
+
+                <div class="row row-cols-3 row-cols-md-4 g-2 text-center">
+
+                  <div class="col">
+                    <input type="radio" class="btn-check" name="hora" id="hora-0900" value="09:00" required
+                      autocomplete="off">
+                    <label class="btn btn-outline-primary w-100" for="hora-0900">09:00</label>
+                  </div>
+
+                  <div class="col">
+                    <input type="radio" class="btn-check" name="hora" id="hora-1100" value="11:00" required
+                      autocomplete="off">
+                    <label class="btn btn-outline-primary w-100" for="hora-1100">11:00</label>
+                  </div>
+
+                  <div class="col">
+                    <input type="radio" class="btn-check" name="hora" id="hora-1300" value="13:00" required
+                      autocomplete="off">
+                    <label class="btn btn-outline-primary w-100" for="hora-1300">13:00</label>
+                  </div>
+
+                  <div class="col">
+                    <input type="radio" class="btn-check" name="hora" id="hora-1500" value="15:00" required
+                      autocomplete="off">
+                    <label class="btn btn-outline-primary w-100" for="hora-1500">15:00</label>
+                  </div>
+
+                  <div class="col">
+                    <input type="radio" class="btn-check" name="hora" id="hora-1700" value="17:00" required
+                      autocomplete="off">
+                    <label class="btn btn-outline-primary w-100" for="hora-1700">17:00</label>
+                  </div>
+
+                  <div class="col">
+                    <input type="radio" class="btn-check" name="hora" id="hora-1900" value="19:00" required
+                      autocomplete="off">
+                    <label class="btn btn-outline-primary w-100" for="hora-1900">19:00</label>
+                  </div>
+
+                  <div class="col">
+                    <input type="radio" class="btn-check" name="hora" id="hora-2100" value="21:00" required
+                      autocomplete="off">
+                    <label class="btn btn-outline-primary w-100" for="hora-2100">21:00</label>
+                  </div>
+                </div>
+
+                <div class="modal-footer p-0 pt-4">
+                  <button type="submit" class="btn btn-success w-100">Seguir completando el formulario</button>
+                </div>
+              </form>
+            </section>
+          </article>
+        </section>
+      </article>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre-nosotros" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="text-light fw-bold">Sobre nosotros</h2>
+          <p class="text-light">Conocé quiénes somos y por qué amamos el pádel tanto como vos</p>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="row g-4">
+          <div class="col-12">
+            <div id="bento-grid">
+
+              <!-- Imagen principal grande -->
+              <div class="bento-item first">
+                <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
+                  <img src="assets/img/nosotros-equipo.jpeg" class="img-fluid h-100 w-100 object-fit-cover"
+                    alt="equipo-padel">
+                  <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
+                    <h4 class="text-white fw-bold">Pasión por el pádel</h4>
+                    <p class="text-white">Creamos esta plataforma para que cada jugador encuentre su lugar en la
+                      cancha, fácil y rápido.</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Dos tarjetas pequeñas -->
-            <div class="bento-item">
-              <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
-                <img src="assets/img/pelotas-padel.jpg" class="card-img" alt="Cancha de pádel" loading="lazy">
-                <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
-                  <h4 class="fw-bold text-white">Rápido y simple</h4>
-                  <p class="text-white">Reservá tu cancha en menos de un minuto.</p>
+              <!-- Dos tarjetas pequeñas -->
+              <div class="bento-item">
+                <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
+                  <img src="assets/img/pelotas-padel.jpg" class="card-img" alt="Cancha de pádel" loading="lazy">
+                  <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
+                    <h4 class="fw-bold text-white">Rápido y simple</h4>
+                    <p class="text-white">Reservá tu cancha en menos de un minuto.</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="bento-item">
-              <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
-                <img src="assets/img/personas-padel.avif" class="card-img" alt="Cancha de pádel" loading="lazy">
-                <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
-                  <h4 class="fw-bold text-white">Jugadores unidos</h4>
-                  <p class="text-white">Armá partidos con amigos o nuevos rivales.</p>
+              <div class="bento-item">
+                <div class="card border border-primary shadow-sm h-100 rounded-4 overflow-hidden">
+                  <img src="assets/img/personas-padel.avif" class="card-img" alt="Cancha de pádel" loading="lazy">
+                  <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient">
+                    <h4 class="fw-bold text-white">Jugadores unidos</h4>
+                    <p class="text-white">Armá partidos con amigos o nuevos rivales.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Frase inspiracional tipo banner -->
-        <div class="col-12">
-          <div class="card border border-primary shadow-sm rounded-4 bg-dark text-light text-center p-5">
-            <h4 class="fw-bold mb-3">“Nuestra misión es que cada partido sea una experiencia inolvidable.”</h4>
-            <p class="mb-0 text-white-50">Somos una comunidad que busca conectar jugadores, fomentar el deporte y
-              compartir la pasión por el pádel.</p>
+          <!-- Frase inspiracional tipo banner -->
+          <div class="col-12">
+            <div class="card border border-primary shadow-sm rounded-4 bg-dark text-light text-center p-5">
+              <h4 class="fw-bold mb-3">“Nuestra misión es que cada partido sea una experiencia inolvidable.”</h4>
+              <p class="mb-0 text-white-50">Somos una comunidad que busca conectar jugadores, fomentar el deporte y
+                compartir la pasión por el pádel.</p>
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="bg-primary text-light pt-5 pb-3 mt-5">
     <div class="container">
       <div class="row">
 
-        <div class="col-md-4 d-flex align-items-center justify-content text-center">
+        <div class="col-md-4 d-flex align-items-center justify-content-center text-center">
           <h4 class="fw-bold text-uppercase mb-0">Pádel Booking</h4>
         </div>
 

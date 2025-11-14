@@ -152,8 +152,8 @@
   background: radial-gradient(circle, rgba(50, 200, 150, 0.4), transparent 60%);
   filter: blur(70px);
 
-  width: 900px;
-  height: 900px;
+  width: 1000px;
+  height: 1000px;
   
   bottom: -50px; 
   right: -100px; 
